@@ -52,14 +52,32 @@ function onOperationButtonClick(eventData) {
     let operand1 = parseFloat(previousValue);
     let operand2 = parseFloat(currentValue);
 
-    if (previousOperation === "+") {
-      result = operand1 + operand2;
-    } else if (previousOperation === "-") {
-      result = operand1 - operand2;
-    } else if (previousOperation === "/") {
-      result = operand1 / operand2;
-    } else if (previousOperation === "*") {
-      result = operand1 * operand2;
+    //if (previousOperation === "+") {
+    //result = operand1 + operand2;
+    //} else if (previousOperation === "-") {
+    // result = operand1 - operand2;
+    //} else if (previousOperation === "/") {
+    //result = operand1 / operand2;
+    //} else if (previousOperation === "*") {
+    //result = operand1 * operand2;
+    //}
+
+    switch (previousOperation) {
+      case "+":
+        result = operand1 + operand2;
+        break;
+      case "-":
+        result = operand1 - operand2;
+        break;
+      case "/":
+        result = operand1 / operand2;
+        break;
+      case "*":
+        result = operand1 * operand2;
+        break;
+      default:
+        alert("Something went wrong!");
+        break;
     }
 
     document.getElementById("display").innerText = result;
